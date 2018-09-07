@@ -1,0 +1,26 @@
+{
+  "name": "ATP-REST-APIs",
+  "version": "1.1",
+  "description": "REST APIs for Oracle Autonomous Database Cloud"
+
+  },
+  "dependencies": {
+    "http-signature": "^1.0",
+    "jssha": "^2.0"
+  },
+  "engines": {
+    "node": "^8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kbhanush/ATP-REST-nodejs"
+  },
+  "keywords": [
+    "node",
+    "Autonomous",
+    "Oracle",
+    "Oracle Cloud"
+  ],
+  "author": "Kris Bhanushali",
+  "license": "MIT"
+}
