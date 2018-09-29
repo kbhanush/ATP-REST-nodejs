@@ -47,7 +47,7 @@ console.log("GET USER:");
 headers.getUser(auth.authUserId, function(data) {
     console.log(data);
 
-   var autonomousDatabase = "ocid1.autonomousdatabase.oc1.phx.abyhqljrmncxqqnjbwnkpgagnsiqxgn6wtjydohklhfaijyzsntsech5ztcq";
+   var autonomousDatabase = "ocid1.autonomousdatabase.oc1.phx.abyhqljrmnafgaagfnkpgagnsiqxgn6wtjydohklhfaijyzsntsech5ztcq";
 
     console.log("\nGetting Autonomous Database:");
 

@@ -17,7 +17,7 @@ var https = require('https');
 function createATP(callback) {
 
 var body = JSON.stringify({
-  "compartmentId" : auth.krisBCompartment,
+  "compartmentId" : auth.myCompartment,
   "displayName" : "example_autonomous_database6",
   "dbName" : "adatabasedb6",
   "adminPassword" : "AVeryLongPassword321!",
