@@ -32,8 +32,7 @@ tenancyId: tenancyId,
 authUserId: authUserId,
 keyFingerprint: keyFingerprint,
 privateKey: privateKey,
-krisBCompartment: krisBCompartment,
-DBPMCompartment: DBPMCompartment
+myCompartment: myCompartment
 
 };
 

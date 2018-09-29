@@ -61,7 +61,7 @@ headers.getUser(auth.authUserId, function(data) {
     // TODO: replace this with a compartment you have access to
     var compartmentIdToCreateVcnIn = auth.krisBCompartment;
 
-    createVCN(compartmentIdToCreateVcnIn, "nodejs-VCN4", "10.11.0.0/16", function(data) {
+    createVCN(compartmentIdToCreateVcnIn, "MyAppVCN4", "10.11.0.0/16", function(data) {
         console.log(data);
     });
 });

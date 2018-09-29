@@ -37,7 +37,7 @@ console.log("GET USER:");
 headers.getUser(auth.authUserId, function(data) {
     console.log(data);
 
-   var compartment = auth.DBPMCompartment;
+   var compartment = auth.myCompartment;
 
     console.log("\nListing Autonomous Databases:");
 
