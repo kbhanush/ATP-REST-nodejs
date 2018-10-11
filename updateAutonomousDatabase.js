@@ -3,7 +3,7 @@
 
     Author: kris.bhanushali@oracle.com
     
-    Get details for specified ATP Service
+    update an Autonomous Transaction Processing Service
 
     Before running this example, install necessary dependencies by running:
     npm install http-signature jssha
@@ -12,52 +12,50 @@ var auth = require('./auth.js');
 var regions = require('./regions.js');
 var headers = require('./headers.js');
 var https = require('https');
+//update autonomous database ATP 
 
-//Create autonomous database ATP 
+var ocid = process.argv[2];
 
+var body = JSON.stringify({
+  "cpuCoreCount" : parseInt(process.argv[3]),
+  "dataStorageSizeInTBs" : parseInt(process.argv[4])
+});
 
-function getATP(autonomousDatabaseId, callback) {
+function updateATP(callback) {
 
-    var options = {
+var options = {
         host: regions.dbPhoenixRegion,
-        path: '/20160918/autonomousDatabases/'+ encodeURIComponent(autonomousDatabaseId),
-       // path: '/20160918/autonomousDatabases/'+ encodeURIComponent(autonomousDatabaseId),
-        method: 'GET',
+        path: '/20160918/autonomousDatabases/' + ocid,
+        method: 'PUT',
         headers: {
             "Content-Type": "application/json"
         }
     };
-
-    var request = https.request(options, headers.handleRequest(callback));
+var request = https.request(options, headers.handleRequest(callback));
 
     headers.sign(request, {
+        body: body,
         privateKey: auth.privateKey,
         keyFingerprint: auth.keyFingerprint,
         tenancyId: auth.tenancyId,
         userId: auth.authUserId
     });
 
-    request.end();
+    request.end(body);
 };
-
-
-// test the above functions
-console.log("GET USER:");
 
 headers.getUser(auth.authUserId, function(data) {
     console.log(data);
 
-   var autonomousDatabase = process.argv[2];
 
-    console.log("\nGetting Autonomous Database:");
+    console.log("\nUpdating ATP Service:");
 
-    // TODO: replace this with a compartment you have access to
     
-    getATP(autonomousDatabase,function(data) {
-        
+    updateATP(function(data) {
         console.log(data);
     });
 
+});
+
 
    
-});

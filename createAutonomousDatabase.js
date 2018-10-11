@@ -14,15 +14,17 @@ var headers = require('./headers.js');
 var https = require('https');
 //Create autonomous database ATP 
 
+
+
 function createATP(callback) {
 
 var body = JSON.stringify({
   "compartmentId" : auth.myCompartment,
-  "displayName" : "example_autonomous_database6",
-  "dbName" : "adatabasedb6",
-  "adminPassword" : "AVeryLongPassword321!",
-  "cpuCoreCount" : 1,
-  "dataStorageSizeInTBs" : 1
+  "displayName" : process.argv[2],
+  "dbName" : process.argv[3],
+  "adminPassword" : process.argv[4],
+  "cpuCoreCount" : parseInt(process.argv[5]),
+  "dataStorageSizeInTBs" : parseInt(process.argv[6])
 });
 var options = {
         host: regions.dbPhoenixRegion,

@@ -4,10 +4,10 @@ var regions = require('./regions.js');
 
 var https = require('https');
 
-//Create autonomous database ATP 
+//List autonomous database ATP 
 
 
-function getATP(compartmentId, callback) {
+function listATP(compartmentId, callback) {
 
     var options = {
         host: regions.dbPhoenixRegion,
@@ -43,7 +43,7 @@ headers.getUser(auth.authUserId, function(data) {
 
     // TODO: replace this with a compartment you have access to
     
-    getATP(compartment,function(data) {
+    listATP(compartment,function(data) {
         
         console.log(data);
     });

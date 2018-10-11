@@ -3,7 +3,7 @@
 
     Author: kris.bhanushali@oracle.com
     
-    Get details for specified ATP Service
+    Start specified ATP Service
 
     Before running this example, install necessary dependencies by running:
     npm install http-signature jssha
@@ -13,16 +13,15 @@ var regions = require('./regions.js');
 var headers = require('./headers.js');
 var https = require('https');
 
-//Create autonomous database ATP 
+//Start autonomous database ATP 
 
 
-function getATP(autonomousDatabaseId, callback) {
+function startATP(autonomousDatabaseId, callback) {
 
     var options = {
         host: regions.dbPhoenixRegion,
-        path: '/20160918/autonomousDatabases/'+ encodeURIComponent(autonomousDatabaseId),
-       // path: '/20160918/autonomousDatabases/'+ encodeURIComponent(autonomousDatabaseId),
-        method: 'GET',
+        path: '/20160918/autonomousDatabases/'+ encodeURIComponent(autonomousDatabaseId) + "/actions/start",
+        method: 'POST',
         headers: {
             "Content-Type": "application/json"
         }
@@ -49,11 +48,11 @@ headers.getUser(auth.authUserId, function(data) {
 
    var autonomousDatabase = process.argv[2];
 
-    console.log("\nGetting Autonomous Database:");
+    console.log("\nStarting Autonomous Database:");
 
     // TODO: replace this with a compartment you have access to
     
-    getATP(autonomousDatabase,function(data) {
+    startATP(autonomousDatabase,function(data) {
         
         console.log(data);
     });

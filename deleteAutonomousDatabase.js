@@ -46,7 +46,7 @@ console.log("GET USER:");
 headers.getUser(auth.authUserId, function(data) {
     console.log(data);
 
-   var autonomousDatabase = "ocid1.autonomousdatabase.oc1.phx.abyhqlsck11232445sjckagsckagsckagsckagjscscgaswdw"
+   var autonomousDatabase = process.argv[2];
     console.log("\nDeleting Autonomous Database:");
 
     // TODO: replace this with a compartment you have access to
