@@ -22,7 +22,12 @@ var keyFingerprint= lines[2].split("=")[1];
 var tenancyId= lines[4].split("=")[1];
 
 //User will enter their compartment here
-var rootCompartment = "ocid1.tenancy.oc1..aaaaaaaawrgt5au6hbledhhyas2secm3q2atqiuvihck45rbi3jyc5tfyfga";
+if(lines.length() == 6){
+	var rootCompartment = lines[5].split("=")[1];
+}
+else{
+	console.log("Please edit the /root/.oci/config file to have a compartmentid parameter")
+}
 
 // if(privateKeyPath.indexOf("~/") === 0) {
 //     privateKeyPath = privateKeyPath.replace("~", os.homedir())
