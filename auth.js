@@ -22,8 +22,8 @@ var keyFingerprint= lines[2].split("=")[1];
 var tenancyId= lines[4].split("=")[1];
 
 //User will enter their compartment here
-if(lines.length == 6){
-	var rootCompartment = lines[5].split("=")[1];
+if(lines.length == 7){
+	var rootCompartment = lines[6].split("=")[1];
 }
 else{
 	console.log("Please edit the /root/.oci/config file to have a compartmentid parameter")
