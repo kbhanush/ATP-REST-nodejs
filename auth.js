@@ -22,7 +22,7 @@ var keyFingerprint= lines[2].split("=")[1];
 var tenancyId= lines[4].split("=")[1];
 
 //User will enter their compartment here
-if(lines.length == 7){
+if(lines.length == 8){
 	var rootCompartment = lines[6].split("=")[1];
 }
 else{
